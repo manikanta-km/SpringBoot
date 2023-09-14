@@ -1,6 +1,7 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ public class TestAPI {
 // and to check this is working or not use(http://localhost:8080/api/v1/mani/123/i) paste in google. (8080: bcz it is working on your local host on port 8080)
 
     @Autowired
+    @Qualifier("orangecar") // we are using specified bean
     Car carobj;
     // @Component will create an object and it will be kept by springboot and when we write @autowired then it will give the object present with it to the reference(here carobj) where @autowired is written
     // here there is one case when we write @primary for a bean then then the springboot will store the object of that method
