@@ -16,13 +16,13 @@ public class ObjectFactory {
     }
     // @Bean will call the methods present in class
 
-    @Bean
+    @Bean("orangecar")
     public static Car createOrangeCar()   // it works for even static methods also
     {
         System.out.println("testing configuration class methods (one parameter)!!!!!!");
         return new Car("ORANGE");
     }
-    @Bean
+    @Bean("bluecar")
     public Car createBlueCar()
     {
         System.out.println("testing configuration class methods (one parameter)!!!!!!");
@@ -49,4 +49,5 @@ public class ObjectFactory {
 //   dencies and springboot wants to use a database and we will never write a code to use the mysql database and bcz of this annotation
 //   it will automatically detects the type of database based on the dependencies and it will use mysql database this is the use of this annotation and this works
 //   for anything not only database
-// we should use @primary when we have methods different from the class
+// instead of @primary we can use @qualifier to be more specific which bean we should use, to use qualifier along with the bean in brackets
+// write a thing about it eg: @Bean(bluecar) and along with @autowired write @qualifier
